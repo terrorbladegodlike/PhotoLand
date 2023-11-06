@@ -1,7 +1,17 @@
-import React from 'react';
+import React from 'react'
 
-const CategoryNavMobile = () => {
-  return <div>CategoryNavMobile</div>;
-};
+// import Icons
+import { FiX } from 'react-icons/fi'
 
-export default CategoryNavMobile;
+const CategoryNavMobile = ({ setCarNavMobile }) => {
+  return (
+    <div className='w-full h-full bg-primary p-8'>
+      {/* Close Icon */}
+      <div onClick={() => setCarNavMobile(false)} className='flex justify-end mb-8 cursor-pointer'>
+        <FiX className='text-3xl' />
+      </div>
+    </div>
+  )
+}
+
+export default CategoryNavMobile

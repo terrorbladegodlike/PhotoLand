@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 
 const Product = ({ product }) => {
-  console.log(product);
   return (
     <Link to={`/product/${product.id}`}>
       <div className='grad w-full h-[362px] rounded-[8px] overflow-hidden relative group'>

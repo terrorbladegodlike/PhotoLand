@@ -44,9 +44,9 @@ const CartItem = ({ item }) => {
           {/* Quanlity */}
           <div className='flex gap-x-4 mb-2'>
             <Qty item={item} />
-            <div className='text-accent text-xl'>
-              $ {item.attributes.price * item.amount}
-            </div>
+          </div>
+          <div className='text-accent text-xl'>
+            $ {item.attributes.price * item.amount}
           </div>
         </div>
         {/* Price */}

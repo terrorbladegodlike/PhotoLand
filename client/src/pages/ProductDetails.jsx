@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 // Import UseParams Hook from React-Router-DOM
 import { useParams } from 'react-router-dom';
@@ -14,6 +14,8 @@ import { CartContext } from './../context/CartContext';
 
 
 const ProductDetails = () => {
+
+  const { addToCart } = useContext(CartContext)
 
   const { id } = useParams()
 
@@ -62,7 +64,10 @@ const ProductDetails = () => {
                 ${data[0].attributes.price}
               </div>
               {/* BTN */}
-              <button className='btn btn-accent'>
+              <button
+                onClick={() => addToCart(data, id)}
+                className='btn btn-accent'
+              >
                 Add to Cart
               </button>
             </div>

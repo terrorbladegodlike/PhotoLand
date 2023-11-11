@@ -46,10 +46,6 @@ const Header = () => {
           </div>
           {/* Phone & Cart */}
           <div className='flex items-center gap-x-[10px]'>
-            {/* Phone */}
-            <div className='hidden xl:flex uppercase'>
-              Need Help?  079 96 21 99
-            </div>
             {/* Cart icon */}
             <div
               onClick={() => setIsOpen(!isOpen)}

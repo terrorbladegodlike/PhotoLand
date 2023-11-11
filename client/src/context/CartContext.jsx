@@ -21,6 +21,14 @@ const CartProvider = ({ children }) => {
 
   }, [cart])
 
+  // Cart Total
+  useEffect(() => {
+    const total = cart.reduce((a, c) => {
+      return a + c.attributes.price * c.amount
+    }, 0)
+    setTotal(total)
+  }, [cart])
+
   // Add To Cart
   const addToCart = (item, id) => {
     const itemID = parseInt(id)
@@ -102,8 +110,26 @@ const CartProvider = ({ children }) => {
     }
   }
 
+  // Clear Cart
+  const clearCart = () => {
+    setCart([])
+  }
+
   return (
-    <CartContext.Provider value={{ isOpen, setIsOpen, addToCart, cart, removeFromCart, itemsAmount, handleInput, handleSelect }}>
+    <CartContext.Provider
+      value={{
+        isOpen,
+        setIsOpen,
+        addToCart,
+        cart,
+        removeFromCart,
+        itemsAmount,
+        handleInput,
+        handleSelect,
+        total,
+        clearCart
+      }}
+    >
       {children}
     </CartContext.Provider>
   )
